@@ -4,7 +4,7 @@
     edad: 19,
     mails:["jongibaut@gmail.com","jongibaut@hotmail.com"]
 };*/
-/*const Personajes = [
+const Personajes = [
     {
         nombre: "Homero",
         apellido: "Simpson",
@@ -20,9 +20,20 @@
         apellido: "Esponja",
         trabajo: ["Cocinero"]
     },
-]
+];
 
 const getAll = (arrayDeObjetos) => {
+    arrayDeObjetos.forEach(item => {
+        if(item.trabajo.length > 1) {
+            mas1trabajo = true;
+        } else{
+            mas1trabajo = false;
+        };
+        console.log(`Nombre: ${item.nombre}. Apellido: ${item.apellido}. Tiene mas de un Trabajo: ${mas1trabajo ? "Si":"No"}`)
+            });
+};
+
+/*const getAll = (arrayDeObjetos) => {
     arrayDeObjetos.forEach(item => {
         //let mas1trabajo = false;
         if (item.trabajo.length > 1) {
@@ -33,13 +44,6 @@ const getAll = (arrayDeObjetos) => {
         console.log(`Nombre: ${item.nombre}. Apellido: ${item.apellido}. Tiene mas de un Trabajo: ${mas1trabajo ? "Si":"No"}`)
         
     })
-}
-getAll(Personajes);*/
-/////////////////////////////////////////////////////////////////
-const axios = require("axios");
+}*/
+getAll(Personajes);
 
-async function get(url){
-    const Personajes = await axios.get(url);
-    console.log(Personajes);
-};
-get("https://breackingbadapi.com/api/characters")
